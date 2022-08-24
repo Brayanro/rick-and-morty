@@ -1,18 +1,22 @@
 const NavPage = ({ page, setPage }) => {
   return (
     <div className='flex justify-center py-6'>
-      <div className='btn-group grid grid-cols-2 gap-1'>
+      <div className='btn-group'>
         <button
           className='btn btn-primary'
-          onClick={() => setPage(page === 0 ? 1 : page - 1)}
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
         >
-          PREVIOUS PAGE
+          {'<'}
+        </button>
+        <button className='btn btn-primary btn-active'>
+          Page {page}
         </button>
         <button
           className='btn btn-primary'
           onClick={() => setPage(page + 1)}
         >
-          NEXT
+          {'>'}
         </button>
       </div>
     </div>
